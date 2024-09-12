@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Popover, PopoverContent,PopoverTrigger,} from "@/components/ui/popover"
 import { Search } from "lucide-react"
@@ -10,16 +10,21 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
 import { Button } from './ui/button';
+import apiClient from '../services/apiClient';
 
 const UserSection = () => {
 
-  const [users, setUsers] = useState([
-    { id: 1, username: "JohnDoe", profile_picture: "https://example.com/johndoe.png" },
-    { id: 2, username: "JaneSmith", profile_picture: "https://example.com/janesmith.png" },
-    { id: 3, username: "ChrisNolan", profile_picture: null },
-    { id: 4, username: "AliceJohnson", profile_picture: "https://example.com/alicejohnson.png" },
-    { id: 5, username: "BobBrown", profile_picture: null },
-  ]);
+  const [users, setUsers] = useState([])
+
+  //fetch all users
+  useEffect(() => {
+    apiClient.get(`/users/`)
+        .then(response => {
+            const filteredUsers = response.data.filter(u => u.id !== user.user_id);
+            setUsers(filteredUsers)
+        })
+        .catch(error => console.error('Error:', error));
+    }, []);
 
   const [user] = useState({ user_id: 1 });
   
