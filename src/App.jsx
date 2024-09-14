@@ -57,7 +57,7 @@ useEffect(() => {
   if (!user) return;
 
   const wsScheme = window.location.protocol === "https:" ? "wss" : "ws";
-  const wsURL = `${wsScheme}://localhost:8000/ws/user/${user.user_id}/`;
+  const wsURL = `${wsScheme}://discourse-chat-07776d7da87a.herokuapp.com/ws/user/${user.user_id}/`;
 
   const ws = new WebSocket(wsURL);
 
