@@ -35,8 +35,8 @@ const Home = () => {
 };
 
   return (
-    <div className="bg-deafult flex flex-col gap-4 md:h-screen items-center justify-center gap-x-4">
-        <div className='p-8 md:p-0'>
+    <div className="bg-deafult flex flex-col md:flex-row gap-4 md:h-screen items-center justify-center gap-x-4">
+        <div className='p-8'>
             <h1 className='text-4xl md:text-6xl font-bold text-primary'>Discourse</h1>
             <h1 className='text-2xl md:text-4xl font-semibold'>Hangout Anywhere, Anytime</h1>
             {user ? (
@@ -52,8 +52,8 @@ const Home = () => {
               </div>
             )}
         </div>
-        <img src="/chatScreenshot1.png" className='w-auto h-[700px] md:h-[600px]'/>
-        <img src="/chatScreenshot2.png" className='w-auto h-[700px] md:h-[600px]'/>
+        <img src="/chatScreenshot1.png" className='w-auto h-[700px] md:h-[500px]'/>
+        <img src="/chatScreenshot2.png" className='w-auto h-[700px] md:h-[500px]'/>
     </div>
   )
 }
