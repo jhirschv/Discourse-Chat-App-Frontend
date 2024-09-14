@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'http://localhost:8000/',
+  baseURL: 'https://discourse-chat-07776d7da87a.herokuapp.com/',
 });
 
 apiClient.interceptors.request.use(config => {
