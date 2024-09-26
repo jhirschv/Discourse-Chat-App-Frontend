@@ -11,9 +11,10 @@ import Account from './_root/pages/Account';
 import PrivateRoute from './utils/PrivateRoute'
 import apiClient from './services/apiClient';
 import AuthContext from './context/AuthContext';
+import useDisableZoom from './utils/useDisableZoom';
 
 function App() {
-
+  useDisableZoom();
   const { user } = useContext(AuthContext);
   const [userInfo, setUserInfo] = useState(null)
 
