@@ -6,7 +6,7 @@ import Sidebar from '@/components/shared/Sidebar';
 const RootLayout = ({userInfo}) => {
 
     return (
-      <div className={`h-screen flex flex-col flex-1 md:p-4 pt-16`}>
+      <div className={`h-screen flex flex-col flex-1 pt-16`}>
           <Topbar userInfo={userInfo}/>
           <div className='flex h-full'>
           <Outlet />
